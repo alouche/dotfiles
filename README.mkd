@@ -1,0 +1,7 @@
+# Ali's dotfiles
+
+Well... mostly used to keep my work environments in sync...
+
+### Notice
+
+- The vim directory will not be uploaded! but by reading the vimrc, you may decide which modules to install
