@@ -4,4 +4,4 @@ Well... mostly used to keep my work environments in sync...
 
 ### Notice
 
-- The vim directory will not be uploaded! but by reading the vimrc, you may decide which modules to install
+VIM plugins are added as git submodules... updated all modules with "git submodule foreach git pull origin master"
