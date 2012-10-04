@@ -10,3 +10,54 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/xoria256"]
+	path = vim/bundle/xoria256
+	url = git://github.com/vim-scripts/xoria256.vim.git
+[submodule "vim/bundle/vim-git"]
+	path = vim/bundle/vim-git
+	url = git://github.com/tpope/vim-git.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "vim/bundle/statline"]
+	path = vim/bundle/statline
+	url = git://github.com/millermedeiros/vim-statline.git
+[submodule "vim/bundle/delimitmate"]
+	path = vim/bundle/delimitmate
+	url = git://github.com/Raimondi/delimitMate.git
+[submodule "vim/bundle/csapprox"]
+	path = vim/bundle/csapprox
+	url = git://github.com/godlygeek/csapprox.git
+[submodule "vim/bundle/golang"]
+	path = vim/bundle/golang
+	url = git://github.com/jnwhiteh/vim-golang.git
+[submodule "vim/bundle/scala"]
+	path = vim/bundle/scala
+	url = git://github.com/rosstimson/scala-vim-support.git
+[submodule "vim/bundle/javascript"]
+	path = vim/bundle/javascript
+	url = git://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/conque"]
+	path = vim/bundle/conque
+	url = git://github.com/rson/vim-conque.git
+[submodule "vim/bundle/ruby-conque"]
+	path = vim/bundle/ruby-conque
+	url = git://github.com/skwp/vim-ruby-conque.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/puppet"]
+	path = vim/bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git
+[submodule "vim/bundle/cucumber"]
+	path = vim/bundle/cucumber
+	url = git://github.com/tpope/vim-cucumber.git
+[submodule "vim/bundle/jellybeans"]
+	path = vim/bundle/jellybeans
+	url = git://github.com/nanotech/jellybeans.vim.git

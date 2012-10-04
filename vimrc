@@ -23,9 +23,9 @@ set swapfile
 set undofile
 set undolevels=1000
 set undoreload=10000
-set undodir=~/.vim/tmp
-set backupdir=~/.vim/tmp
-set directory=~/.vim/tmp
+set undodir=~/.vim-tmp
+set backupdir=~/.vim-tmp
+set directory=~/.vim-tmp
 set tabpagemax=3
 if has('title')
   set title
@@ -67,9 +67,9 @@ let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
-colorscheme solarized
-"colorscheme xoria256
-"autocmd filetype ruby color jellybeans
+"colorscheme solarized
+colorscheme xoria256
+autocmd filetype ruby color jellybeans
 
 " -----------------------------------------------------------------
 " Format
@@ -104,12 +104,22 @@ let g:tagbar_usearrows = 1
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
 
+nmap <silent> <Leader>rcrr :call RunRubyCurrentFileConque()<CR>
+nmap <silent> <Leader>rcss :call RunRspecCurrentFileConque()<CR>
+nmap <silent> <Leader>rcll :call RunRspecCurrentLineConque()<CR>
+nmap <silent> <Leader>rccc :call RunCucumberCurrentFileConque()<CR>
+nmap <silent> <Leader>rccl :call RunCucumberCurrentLineConque()<CR>
+nmap <silent> <Leader>rcRR :call RunRakeConque()<CR>
+nmap <silent> <Leader>rcrl :call RunLastConqueCommand()<CR>
+
 noremap <leader>o <Esc>:CommandT<CR>
 noremap <leader>O <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
 noremap <leader>l :TagbarToggle<CR>
 noremap <leader>c :ConqueTermVSplit bash<CR>
 noremap <leader>r :!ruby %<cr>
+nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
+nnoremap <silent> ,<C-s> :call RelatedSpecOpen()<CR>
 
 " -----------------------------------------------------------------
 " Functions (used across the configuration)
