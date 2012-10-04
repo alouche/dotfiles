@@ -49,6 +49,7 @@ set ignorecase
 set smartcase
 set foldclose=                            " do not fold automatically
 set foldenable
+set foldmethod=marker                     " text folding
 set scrolloff=8
 set mat=5
 set ch=2
@@ -89,6 +90,9 @@ set cindent                             " I like C indents
 set cinkeys=!^                          " do it only when requested
 set cinoptions=(0t0c1
 
+autocmd BufReadCmd //depot/* exe "0r !p4 print -q <afile>"
+autocmd BufReadCmd //depot/* 1
+autocmd BufReadCmd //depot/* set readonly 
 
 " -----------------------------------------------------------------
 " Shortcuts
@@ -134,5 +138,3 @@ function! Pwd()
   let s:curdir = substitute(getcwd(), '/home/aabbas', "~", "g")
   return s:curdir
 endfunction
-
-
