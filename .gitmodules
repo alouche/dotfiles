@@ -64,3 +64,18 @@
 [submodule "vim/bundle/drawit"]
 	path = vim/bundle/drawit
 	url = git://github.com/vim-scripts/DrawIt.git
+[submodule "vim/bundle/coffee-script"]
+	path = vim/bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/jade"]
+	path = vim/bundle/jade
+	url = git://github.com/digitaltoad/vim-jade.git
+[submodule "vim/bundle/stylus"]
+	path = vim/bundle/stylus
+	url = git://github.com/wavded/vim-stylus.git
+[submodule "vim/dict/node"]
+	path = vim/dict/node
+	url = git://github.com/guileen/vim-node.git
+[submodule "vim/bundle/mustang"]
+	path = vim/bundle/mustang
+	url = git://github.com/cschlueter/vim-mustang.git
