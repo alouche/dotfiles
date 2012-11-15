@@ -79,3 +79,6 @@
 [submodule "vim/bundle/mustang"]
 	path = vim/bundle/mustang
 	url = git://github.com/cschlueter/vim-mustang.git
+[submodule "vim/bundle/nyancat"]
+	path = vim/bundle/nyancat
+	url = git://github.com/koron/nyancat-vim.git
