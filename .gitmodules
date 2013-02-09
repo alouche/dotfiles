@@ -82,3 +82,6 @@
 [submodule "vim/bundle/nyancat"]
 	path = vim/bundle/nyancat
 	url = git://github.com/koron/nyancat-vim.git
+[submodule "vim/bundle/vimerl"]
+	path = vim/bundle/vimerl
+	url = git://github.com/jimenezrick/vimerl.git
