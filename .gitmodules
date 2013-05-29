@@ -85,3 +85,6 @@
 [submodule "vim/bundle/vimerl"]
 	path = vim/bundle/vimerl
 	url = git://github.com/jimenezrick/vimerl.git
+[submodule "dircolors-solarized"]
+	path = dircolors-solarized
+	url = git://github.com/seebi/dircolors-solarized.git
