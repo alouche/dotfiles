@@ -43,9 +43,6 @@
 [submodule "vim/bundle/javascript"]
 	path = vim/bundle/javascript
 	url = git://github.com/pangloss/vim-javascript.git
-[submodule "vim/bundle/conque"]
-	path = vim/bundle/conque
-	url = git://github.com/rson/vim-conque.git
 [submodule "vim/bundle/ruby-conque"]
 	path = vim/bundle/ruby-conque
 	url = git://github.com/skwp/vim-ruby-conque.git
