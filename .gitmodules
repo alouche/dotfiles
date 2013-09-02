@@ -13,9 +13,6 @@
 [submodule "vim/bundle/xoria256"]
 	path = vim/bundle/xoria256
 	url = git://github.com/vim-scripts/xoria256.vim.git
-[submodule "vim/bundle/vim-git"]
-	path = vim/bundle/vim-git
-	url = git://github.com/tpope/vim-git.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
@@ -31,18 +28,12 @@
 [submodule "vim/bundle/delimitmate"]
 	path = vim/bundle/delimitmate
 	url = git://github.com/Raimondi/delimitMate.git
-[submodule "vim/bundle/csapprox"]
-	path = vim/bundle/csapprox
-	url = git://github.com/godlygeek/csapprox.git
 [submodule "vim/bundle/golang"]
 	path = vim/bundle/golang
 	url = git://github.com/jnwhiteh/vim-golang.git
 [submodule "vim/bundle/scala"]
 	path = vim/bundle/scala
 	url = git://github.com/rosstimson/scala-vim-support.git
-[submodule "vim/bundle/javascript"]
-	path = vim/bundle/javascript
-	url = git://github.com/pangloss/vim-javascript.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
@@ -55,18 +46,6 @@
 [submodule "vim/bundle/jellybeans"]
 	path = vim/bundle/jellybeans
 	url = git://github.com/nanotech/jellybeans.vim.git
-[submodule "vim/bundle/drawit"]
-	path = vim/bundle/drawit
-	url = git://github.com/vim-scripts/DrawIt.git
-[submodule "vim/bundle/coffee-script"]
-	path = vim/bundle/coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "vim/bundle/jade"]
-	path = vim/bundle/jade
-	url = git://github.com/digitaltoad/vim-jade.git
-[submodule "vim/bundle/stylus"]
-	path = vim/bundle/stylus
-	url = git://github.com/wavded/vim-stylus.git
 [submodule "vim/dict/node"]
 	path = vim/dict/node
 	url = git://github.com/guileen/vim-node.git
