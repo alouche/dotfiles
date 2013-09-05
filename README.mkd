@@ -4,4 +4,7 @@ Well... mostly used to keep my work environments in sync...
 
 ### Notice
 
-VIM plugins are added as git submodules... updated all modules with "git submodule foreach git pull origin master"
+VIM plugins are added as git submodules...
+
+### Setup
+git pull && git submodule init && git submodule update && git submodule status
