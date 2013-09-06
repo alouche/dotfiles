@@ -58,7 +58,7 @@ set showmode
 set cursorline
 set laststatus=2
 "set statusline=[%{BufferCount()}\:%n]\ %<[L%l/%L:C%c\ %P]%2*%h%w%m%r%*[%{Pwd()}/%f]\ %y\ %{fugitive#statusline()}\ %4*%#warningmsg#%{SyntasticStatuslineFlag()}%*
-set mouse=a
+"set mouse=a
 
 
 filetype plugin indent on
