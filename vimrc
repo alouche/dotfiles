@@ -88,13 +88,13 @@ set tabstop=2
 set expandtab
 set softtabstop=2
 set expandtab
-set nosmarttab
+set smarttab
 set autoindent
 set copyindent
-set nosmartindent
-set cindent                             " I like C indents
-set cinkeys=!^                          " do it only when requested
-set cinoptions=h1,l1,g1,t0,i4,+4,(0,w1,W4
+set smartindent
+"set cindent                             " I like C indents
+"set cinkeys=!^                          " do it only when requested
+"set cinoptions=h1,l1,g1,t0,i4,+4,(0,w1,W4
 
 setlocal indentexpr=GoogleCppIndent()
 set omnifunc=syntaxcomplete#Complete
