@@ -58,9 +58,11 @@ set showmode
 set cursorline
 set laststatus=2
 "set statusline=[%{BufferCount()}\:%n]\ %<[L%l/%L:C%c\ %P]%2*%h%w%m%r%*[%{Pwd()}/%f]\ %y\ %{fugitive#statusline()}\ %4*%#warningmsg#%{SyntasticStatuslineFlag()}%*
+set mouse=a
 
 
 filetype plugin indent on
+filetype plugin on
 syntax enable
 set t_Co=256                              " use 256 inside gnome terminal with CSApprox plugin
 set background=dark
@@ -95,6 +97,7 @@ set cinkeys=!^                          " do it only when requested
 set cinoptions=h1,l1,g1,t0,i4,+4,(0,w1,W4
 
 setlocal indentexpr=GoogleCppIndent()
+set omnifunc=syntaxcomplete#Complete
 
 autocmd BufReadCmd //depot/* exe "0r !p4 print -q <afile>"
 autocmd BufReadCmd //depot/* 1
