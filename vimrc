@@ -76,9 +76,11 @@ autocmd filetype ruby color jellybeans
 autocmd filetype js color mustang
 
 au FileType javascript set dictionary+=$HOME/.vim/dict/node/node.dict
-au FileType go autocmd BufWritePre <buffer> Fmt
 
 au BufRead,BufNewFile *.go set filetype=go
+au FileType go autocmd BufWritePre <buffer> Fmt
+au BufWritePost *.go silent! !ctags -R &
+
 " -----------------------------------------------------------------
 " Format
 " -----------------------------------------------------------------
