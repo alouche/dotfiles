@@ -1,0 +1,38 @@
+[user]                                                                                                                                                        
+  name = Ali Abbas
+  email = ali@alouche.net
+[alias]
+    st = status
+    ci = commit
+    all = commit -am
+    br = branch
+    co = checkout
+    di = diff
+    dic = diff --cached
+    lg = log -p
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls = ls-files
+# Show files ignored by git:
+    ign = ls-files -o -i --exclude-standard
+
+[color]
+    ui = auto
+[color "diff"]
+    whitespace = red reverse
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  editor = vim
+  quotepath = false
+[github]
+  user = alouche
+[mergetool]
+  keepBackup = true
