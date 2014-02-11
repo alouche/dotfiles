@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+
+ssh -f -C2qTnN -D 9090 $1

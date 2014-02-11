@@ -1,0 +1,25 @@
+#!/usr/bin/env less
+
+=basic=
+alt+[enter]       open new terminal
+alt+j             focus left
+alt+k             focus down
+alt+l             focus up
+alt+;             focus right
+
+=layout=
+alt+e             default
+alt+s             stacking
+alt+w             tabbed
+
+alt+f             fullscreen
+alt+d             open app with dmenu
+alt+[up]+q        kill a window
+alt+1-9           switch workspace
+alt+[up]+1-9      move a windows to another workspace
+
+alt+[up]+r        restart i3 inplace
+alt+[up]+e        exit i3
+
+alt+[up]+[space] toogle floating
+[alt]+[left mouse click] drag floating

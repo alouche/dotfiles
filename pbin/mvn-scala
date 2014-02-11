@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+
+mvn archetype:generate -DarchetypeGroupId=org.scala-tools.archetypes -DarchetypeArtifactId=scala-archetype-simple
