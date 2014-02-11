@@ -2,9 +2,9 @@
 
 cd "$(dirname "${BASH_SOURCE}")"
 
-#git pull origin master
-#git submodule sync
-#git submodule update --init --recursive
+git pull origin master
+git submodule sync
+git submodule update --init --recursive
 
 exclude=(install.sh, README.mkd)
 
