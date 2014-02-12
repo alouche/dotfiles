@@ -1,4 +1,0 @@
-#!/bin/sh
-#
-
-rbenv local "$(rbenv version-name)"

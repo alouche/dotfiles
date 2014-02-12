@@ -111,7 +111,7 @@ bindsym $mod+Shift+E exit
 bindsym Control+Mod1+Delete exec i3lock
 
 # sleep
-bindsym XF86Sleep exec $HOME/pbin/xf86sleep.sh
+bindsym XF86Sleep exec lsuspend
 
 # suspend
 # (hibernate)
