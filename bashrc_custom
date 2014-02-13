@@ -1,0 +1,7 @@
+source $HOME/.bash_prompt
+
+export GOROOT=$HOME/opt/go
+export GOPATH=$HOME/.go-workspace
+export PATH=$PATH:$HOME/.rbenv/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.pbin
+
+eval "$(rbenv init -)"
