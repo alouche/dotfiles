@@ -1,0 +1,61 @@
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting:  full
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+
+c64*font: xft:Adore64:autohint=false:antialias=false:size=7
+c64*background:          #3a319c
+c64*foreground:          #7b71d6
+
+xterm*title:             xterm
+xterm*faceName:          terminus:pixelsize=10
+xterm*geometry:          100x30
+xterm*cutNewline:        false
+xterm*on4Clicks:         group
+xterm*on5Clicks:         page
+xterm*internalBorder:    1
+xterm*background:        #262729
+xterm*foreground:        light grey
+xterm*metaSendsEscape:   true
+xterm*colorBD:           #ffffff
+xterm*colorBDMode:       false
+xterm*cursorBlink:       false
+xterm*cursorColor:       #e2baf1
+xterm*dynamiccolors: true
+xterm*utf8: 1
+xterm*loginShell:        true
+xterm*charClass:         33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48,58:48,63:48,61:48,44:48,38:48,59:48
+xterm*jumpScroll:        true
+xterm*multiScroll:       true
+xterm*saveLines:         512
+
+*background:        #211708
+*foreground:        #978f83
+
+! mikado colors
+!black
+*color0:    #322a2c
+*color8:    #46423b
+!red
+*color1:    #a04363
+*color9:    #ae837a
+!green
+*color2:    #9b9329
+*color10:   #b4aa30
+!yellow
+!*color3:    #c77920
+*color3:    #bf7a29
+*color11:   #c7a551
+!blue
+*color4:    #6a8c8c
+*color12:   #74999e
+!magenta
+*color5:    #856774
+*color13:   #9c818e
+!cyan
+*color6:    #757978
+*color14:   #9fa590
+!white
+*color7:    #bcbcaf
+*color15:   #c1c4bc
