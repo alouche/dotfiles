@@ -13,6 +13,9 @@ alias appson="sudo netstat -lantp | grep -i stab | awk -F/ '{print $2}' | sort |
 alias netscan='sudo iwlist wlan0 scan'
 alias netapps="lsof -P -i -n | cut -f 1 -d ' '| uniq | tail -n +2"
 
+alias g="git clone"
+alias u="sudo sh -c 'apt-get update && apt-get upgrade'"
+
 # fun stuff
 alias freechess='telnet fics.freechess.org 5000'
 alias guitartune='for n in E2 A2 D3 G3 B3 E4;do play -n synth 4 pluck $n repeat 2;done'
