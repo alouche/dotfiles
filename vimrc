@@ -81,6 +81,7 @@ au BufRead,BufNewFile *.go set filetype=go
 au FileType go autocmd BufWritePre <buffer> Fmt
 "au BufWritePost *.go silent! !ctags -R &
 
+
 " -----------------------------------------------------------------
 " Format
 " -----------------------------------------------------------------
@@ -105,6 +106,8 @@ set omnifunc=syntaxcomplete#Complete
 autocmd BufReadCmd //depot/* exe "0r !p4 print -q <afile>"
 autocmd BufReadCmd //depot/* 1
 autocmd BufReadCmd //depot/* set readonly 
+
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 " -----------------------------------------------------------------
 " Shortcuts
