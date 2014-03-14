@@ -79,6 +79,7 @@ au FileType javascript set dictionary+=$HOME/.vim/dict/node/node.dict
 
 au BufRead,BufNewFile *.go set filetype=go
 au FileType go autocmd BufWritePre <buffer> Fmt
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 "au BufWritePost *.go silent! !ctags -R &
 
 
