@@ -79,7 +79,7 @@ au FileType javascript set dictionary+=$HOME/.vim/dict/node/node.dict
 
 au BufRead,BufNewFile *.go set filetype=go
 au FileType go autocmd BufWritePre <buffer> Fmt
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 "au BufWritePost *.go silent! !ctags -R &
 
 
@@ -133,6 +133,11 @@ noremap <leader>l :TagbarToggle<CR>
 noremap <leader>r :!ruby %<cr>
 nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
 nnoremap <silent> ,<C-s> :call RelatedSpecOpen()<CR>
+
+" Mostly for custom GOPATH etc.
+if filereadable($PWD . "/.vim-env")
+  source $PWD/.vim-env
+endif
 
 " -----------------------------------------------------------------
 " Functions (used across the configuration)
