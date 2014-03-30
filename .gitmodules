@@ -66,4 +66,7 @@
 	url = git://github.com/Blackrush/vim-gocode.git
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
+	url = git://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = git://github.com/fatih/vim-go.git

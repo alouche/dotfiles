@@ -118,7 +118,6 @@ set pastetoggle=<F2>
 
 let mapleader=","
 let maplocalleader="\\"
-let g:SuperTabDefaultCompletionType = "context"
 let g:tagbar_usearrows = 1
 
 let b:undo_indent = "setl sw< ts< sts< et< tw< wrap< cin< cino< inde<"
@@ -133,11 +132,6 @@ noremap <leader>l :TagbarToggle<CR>
 noremap <leader>r :!ruby %<cr>
 nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
 nnoremap <silent> ,<C-s> :call RelatedSpecOpen()<CR>
-
-" Mostly for custom GOPATH etc.
-if filereadable($PWD . "/.vim-env")
-  source $PWD/.vim-env
-endif
 
 " -----------------------------------------------------------------
 " Functions (used across the configuration)
