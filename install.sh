@@ -6,12 +6,17 @@ git pull origin master
 git submodule sync
 git submodule update --init --recursive
 
-exclude=(install.sh, README.mkd)
+exclude=(install.sh README.mkd)
 
 for file in *; do
   if ! [[ ${exclude[*]} =~ $file ]]; then
     if ! [[ "install.sh" =~ $file || -e ~/$file ]]; then
-      ln -sfnv $PWD/${file#$HOME/} "${HOME}/.${file}"
+      ln -sfnv "$PWD/${file#$HOME/}" "${HOME}/.${file}"
     fi
   fi
 done
+
+# Post actions
+cd "$HOME/.vim/bundle/YouCompleteMe"
+./install.sh --clang-completer
+cd -
