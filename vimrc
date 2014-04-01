@@ -81,6 +81,8 @@ au BufRead,BufNewFile *.go set filetype=go
 au FileType go autocmd BufWritePre <buffer> Fmt
 "autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 "au BufWritePost *.go silent! !ctags -R &
+"
+let g:airline#extensions#tabline#enabled = 1
 
 
 " -----------------------------------------------------------------
@@ -125,9 +127,6 @@ let b:undo_indent = "setl sw< ts< sts< et< tw< wrap< cin< cino< inde<"
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
 
-noremap <leader>o <Esc>:CommandT<CR>
-noremap <leader>O <Esc>:CommandTFlush<CR>
-noremap <leader>m <Esc>:CommandTBuffer<CR>
 noremap <leader>l :TagbarToggle<CR>
 noremap <leader>r :!ruby %<cr>
 nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
