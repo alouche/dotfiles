@@ -17,6 +17,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Q kill
 bindsym Mod1+F4 kill
 
+bindsym Mod1+Shift+D exec setxkbmap de
+bindsym Mod1+Shift+U exec setxkbmap us
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
@@ -152,9 +155,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+font -*-clean-medium-r-*--12-*-*-*-*-*-*-*
 bar {
+        position top
+        tray_output primary
         status_command i3status
 }
 
