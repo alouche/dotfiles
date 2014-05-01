@@ -18,6 +18,7 @@ bindsym $mod+Shift+Q kill
 bindsym Mod1+F4 kill
 
 bindsym Mod1+Shift+D exec setxkbmap de
+bindsym Mod1+Shift+X exec setxkbmap 'de(dev)'
 bindsym Mod1+Shift+U exec setxkbmap us
 
 # start dmenu (a program launcher)
