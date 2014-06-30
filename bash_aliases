@@ -5,8 +5,7 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
-alias rbenv-lock='rbenv local "$(rbenv version-name)"'
-
+alias vi="vim"
 alias lock="i3lock"
 alias lsuspend="sudo pm-suspend | lock"
 alias appson="sudo netstat -lantp | grep -i stab | awk -F/ '{print $2}' | sort | uniq"
