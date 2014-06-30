@@ -1,3 +1,7 @@
 source $HOME/.bash_prompt
 
-export PATH=$HOME/.rbenv/bin:$HOME/.pbin:$HOME/.lbin:$PATH
+export PATH=$HOME/.pbin:$HOME/.lbin:$PATH
+
+export GOPATH=/home/aabbas/.gopath
+
+[[ -s "/home/aabbas/.rodent/rodent" ]] && source "/home/aabbas/.rodent/rodent"
