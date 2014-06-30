@@ -16,9 +16,3 @@ for file in *; do
     fi
   fi
 done
-
-# Post actions
-cd "$HOME/.vim/bundle/YouCompleteMe"
-git submodule update --init --recursive
-./install.sh --clang-completer
-cd -
