@@ -73,3 +73,6 @@
 [submodule "vim/bundle/ctrl.vim"]
 	path = vim/bundle/ctrl.vim
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "shell/oh-my-zsh"]
+	path = shell/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh

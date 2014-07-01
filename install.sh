@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "${BASH_SOURCE}")"
+local_path="$(dirname "${BASH_SOURCE}")"
+local_path="`( cd \"$local_path\" && pwd )`"
 
 git pull origin master
 git submodule sync
 git submodule update --init --recursive
 git submodule foreach git pull origin master
 
-exclude=(install.sh README.mkd)
+exclude=(install.sh README.mkd shell)
+
+sed -i "/^DOTPATH=/s,=.*,=${local_path}," "zshrc"
 
 for file in *; do
   if ! [[ ${exclude[*]} =~ $file ]]; then
