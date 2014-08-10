@@ -21,4 +21,3 @@ for file in *; do
 done
 
 ln -sfv "$PWD/shell/prezto" "$HOME/.zprezto"
-ln -sfv "$HOME/.zprezto/runcoms/zpreztorc" "$HOME/.zpreztorc"
