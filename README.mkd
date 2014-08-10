@@ -7,6 +7,6 @@ Well... mostly used to keep my work environments in sync...
 VIM plugins are added as git submodules...
 
 ### Setup
-git clone --recursive https://github.com/alouche/dotfiles "$HOME/.dotfiles"
+git clone --recursive https://github.com/alouche/dotfiles "MY/PATH"
 
 ./install.sh

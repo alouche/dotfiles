@@ -1,7 +1,7 @@
 typeset -gU PATH GOPATH
 
-export PATH=$HOME/.pbin:$HOME/.lbin:$PATH
 export GOPATH=$HOME/.gopath
+export PATH=$HOME/.pbin:$HOME/.lbin:$GOPATH/bin:$PATH
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
