@@ -79,3 +79,6 @@
 [submodule "shell/prezto"]
 	path = shell/prezto
 	url = git://github.com/sorin-ionescu/prezto
+[submodule "vim/bundle/molokai"]
+	path = vim/bundle/molokai
+	url = git://github.com/fatih/molokai
