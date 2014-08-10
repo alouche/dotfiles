@@ -10,3 +10,4 @@ xterm*foreground: #A9A9A9
 xterm*font:-*-terminus-medium-*-*-*-16-*-*-*-*-*-iso8859-*
 xterm*geometry: 120x28 
 XTerm*locale: true
+XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
