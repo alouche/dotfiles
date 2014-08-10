@@ -19,3 +19,6 @@ for file in *; do
     fi
   fi
 done
+
+ln -sfv "$PWD/shell/prezto" "$HOME/.zprezto"
+ln -sfv "$HOME/.zprezto/runcoms/zpreztorc" "$HOME/.zpreztorc"

@@ -1,5 +1,13 @@
+typeset -gU PATH GOPATH
+
 export PATH=$HOME/.pbin:$HOME/.lbin:$PATH
 export GOPATH=$HOME/.gopath
 export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
 export ARCHFLAGS="-arch x86_64"
 [[ -s "$HOME/.rodent/rodent" ]] && source "$HOME/.rodent/rodent"
+
+if [[ -z "$LANG" ]]; then
+  export LANG='en_US.UTF-8'
+fi
