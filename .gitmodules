@@ -75,10 +75,13 @@
 	url = git://github.com/kien/ctrlp.vim.git
 [submodule "shell/oh-my-zsh"]
 	path = shell/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh
+	url = git://github.com/robbyrussell/oh-my-zsh
 [submodule "shell/prezto"]
 	path = shell/prezto
 	url = git://github.com/sorin-ionescu/prezto
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
 	url = git://github.com/fatih/molokai
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = git://github.com/Valloric/YouCompleteMe
