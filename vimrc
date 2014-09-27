@@ -83,6 +83,8 @@ au BufRead,BufNewFile *.go set filetype=go
 "autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 "au BufWritePost *.go silent! !ctags -R &
 "
+let g:go_fmt_command = "goimports"
+
 let g:airline#extensions#tabline#enabled = 1
 
 
