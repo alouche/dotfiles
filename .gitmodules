@@ -10,9 +10,6 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/xoria256"]
-	path = vim/bundle/xoria256
-	url = git://github.com/vim-scripts/xoria256.vim.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
@@ -28,30 +25,12 @@
 [submodule "vim/bundle/delimitmate"]
 	path = vim/bundle/delimitmate
 	url = git://github.com/Raimondi/delimitMate.git
-[submodule "vim/bundle/scala"]
-	path = vim/bundle/scala
-	url = git://github.com/rosstimson/scala-vim-support.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/puppet"]
 	path = vim/bundle/puppet
 	url = git://github.com/rodjek/vim-puppet.git
-[submodule "vim/bundle/cucumber"]
-	path = vim/bundle/cucumber
-	url = git://github.com/tpope/vim-cucumber.git
-[submodule "vim/bundle/jellybeans"]
-	path = vim/bundle/jellybeans
-	url = git://github.com/nanotech/jellybeans.vim.git
-[submodule "vim/dict/node"]
-	path = vim/dict/node
-	url = git://github.com/guileen/vim-node.git
-[submodule "vim/bundle/mustang"]
-	path = vim/bundle/mustang
-	url = git://github.com/cschlueter/vim-mustang.git
-[submodule "vim/bundle/nyancat"]
-	path = vim/bundle/nyancat
-	url = git://github.com/koron/nyancat-vim.git
 [submodule "vim/bundle/vimerl"]
 	path = vim/bundle/vimerl
 	url = git://github.com/jimenezrick/vimerl.git
@@ -61,9 +40,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = git://github.com/bling/vim-airline.git
-[submodule "vim/bundle/vim-golang"]
-	path = vim/bundle/vim-golang
-	url = git://github.com/Blackrush/vim-gocode.git
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = git://github.com/fatih/vim-go.git
