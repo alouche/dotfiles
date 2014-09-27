@@ -66,15 +66,13 @@ filetype plugin on
 syntax enable
 set t_Co=256                              " use 256 inside gnome terminal with CSApprox plugin
 set background=dark
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
 let g:rehash256 = 1
-colorscheme molokai
-autocmd filetype ruby color jellybeans
-autocmd filetype js color mustang
+"colorscheme molokai
 
 au FileType javascript set dictionary+=$HOME/.vim/dict/node/node.dict
 
