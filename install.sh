@@ -21,3 +21,8 @@ for file in *; do
 done
 
 ln -sfv "$PWD/shell/prezto" "$HOME/.zprezto"
+
+pushd .
+cd "$HOME/.vim/bundle/YouCompleteMe"
+./install.sh --clang-completer
+popd
