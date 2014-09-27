@@ -1,13 +1,11 @@
 xterm*termName: xterm-256color
 xterm*eightBitInput: false
-!URxvt.font:xft:source code pro:medium:size=11
-!URxvt.boldFont:xft:source code pro:medium:size=11
 xterm*toolBar: false
 xterm*scrollBar: false
 xterm*rightScrollBar: false
-xterm*background: #1A1A1A
-xterm*foreground: #A9A9A9
 xterm*font:-*-terminus-medium-*-*-*-16-*-*-*-*-*-iso8859-*
 xterm*geometry: 120x28 
+xterm*VT100.geometry: 80x32
 XTerm*locale: true
 XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+#include ".xresources/term_colors"
