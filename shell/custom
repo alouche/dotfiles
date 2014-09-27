@@ -6,6 +6,9 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 export ARCHFLAGS="-arch x86_64"
+
+setopt extended_glob
+
 [[ -s "$HOME/.rodent/rodent" ]] && source "$HOME/.rodent/rodent"
 
 if [[ -z "$LANG" ]]; then
