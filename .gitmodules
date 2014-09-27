@@ -49,9 +49,6 @@
 [submodule "vim/bundle/ctrl.vim"]
 	path = vim/bundle/ctrl.vim
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "shell/oh-my-zsh"]
-	path = shell/oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh
 [submodule "shell/prezto"]
 	path = shell/prezto
 	url = git://github.com/sorin-ionescu/prezto
