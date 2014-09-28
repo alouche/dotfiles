@@ -60,7 +60,6 @@ set laststatus=2
 "set statusline=[%{BufferCount()}\:%n]\ %<[L%l/%L:C%c\ %P]%2*%h%w%m%r%*[%{Pwd()}/%f]\ %y\ %{fugitive#statusline()}\ %4*%#warningmsg#%{SyntasticStatuslineFlag()}%*
 "set mouse=a
 
-
 filetype plugin indent on
 filetype plugin on
 syntax enable
@@ -73,18 +72,6 @@ let g:solarized_visibility="high"
 colorscheme solarized
 let g:rehash256 = 1
 "colorscheme molokai
-
-au FileType javascript set dictionary+=$HOME/.vim/dict/node/node.dict
-
-au BufRead,BufNewFile *.go set filetype=go
-"au FileType go autocmd BufWritePre <buffer> Fmt
-"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
-"au BufWritePost *.go silent! !ctags -R &
-"
-let g:go_fmt_command = "goimports"
-
-let g:airline#extensions#tabline#enabled = 1
-
 
 " -----------------------------------------------------------------
 " Format
@@ -111,8 +98,6 @@ autocmd BufReadCmd //depot/* exe "0r !p4 print -q <afile>"
 autocmd BufReadCmd //depot/* 1
 autocmd BufReadCmd //depot/* set readonly 
 
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-
 " -----------------------------------------------------------------
 " Shortcuts
 " -----------------------------------------------------------------
@@ -130,8 +115,53 @@ map <F4> :TlistToggle<CR>
 
 noremap <leader>l :TagbarToggle<CR>
 noremap <leader>r :!ruby %<cr>
+
+nnoremap <leader>y :YcmForceCompileAndDiagnostics<cr>
+nnoremap <leader>pg :YcmCompleter GoTo<CR>
+nnoremap <leader>pd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
+
+
 nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
 nnoremap <silent> ,<C-s> :call RelatedSpecOpen()<CR>
+
+" -----------------------------------------------------------------
+" YouCompleteMe
+" -----------------------------------------------------------------
+
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_extra_conf_globlist = ['~/code/*']
+let g:ycm_filetype_specific_completion_to_disable = {'javascript': 1}
+
+set omnifunc=syntaxcomplete#Complete
+
+" -----------------------------------------------------------------
+" Syntastic
+" -----------------------------------------------------------------
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--select=F,C9 --max-complexity=10'
+
+
+" -----------------------------------------------------------------
+" Airline
+" -----------------------------------------------------------------
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+" -----------------------------------------------------------------
+" Go stuff (vim-go config etc.)
+" -----------------------------------------------------------------
+
+let g:go_fmt_command = "goimports"
+
+au BufRead,BufNewFile *.go set filetype=go
+au BufWritePost *.go silent! !ctags -R &
+"au FileType go autocmd BufWritePre <buffer> Fmt
+"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 " -----------------------------------------------------------------
 " Functions (used across the configuration)

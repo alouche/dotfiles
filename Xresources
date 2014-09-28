@@ -3,7 +3,6 @@ xterm*eightBitInput: false
 xterm*toolBar: false
 xterm*scrollBar: false
 xterm*rightScrollBar: false
-xterm*font:-*-terminus-medium-*-*-*-16-*-*-*-*-*-iso8859-*
 xterm*geometry: 120x28 
 xterm*VT100.geometry: 80x32
 XTerm*locale: true

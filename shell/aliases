@@ -1,6 +1,10 @@
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && cat && date'
+alias week='date +%V'
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 alias vi="vim"
 alias lock="i3lock"
@@ -10,7 +14,7 @@ alias netscan='sudo iwlist wlan0 scan'
 alias netapps="lsof -P -i -n | cut -f 1 -d ' '| uniq | tail -n +2"
 
 alias g="git clone"
-alias u="sudo sh -c 'apt-get update && apt-get upgrade'"
+alias u="sudo sh -c 'pacman -Syu'"
 
 # fun stuff
 alias freechess='telnet fics.freechess.org 5000'
