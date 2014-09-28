@@ -25,4 +25,9 @@ ln -sfv "$PWD/shell/prezto" "$HOME/.zprezto"
 pushd .
 cd "$HOME/.vim/bundle/YouCompleteMe"
 ./install.sh --clang-completer
+if [ -f "/etc/arch-release" ]
+then
+  rm -f ./third_party/ycmd/libclang.so
+  ln -s /usr/lib/libclang.so ./third_party/ycmd/libclang.so
+fi
 popd
