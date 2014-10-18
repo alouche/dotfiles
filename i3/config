@@ -83,17 +83,6 @@ bindsym $mod+Shift+E exit
 
 bindsym Control+Mod1+Delete exec i3lock
 
-bindsym XF86Sleep exec lsuspend
-
-# suspend
-# (hibernate)
-# bindsym XF86Suspend exec $HOME/pbin/xf86suspend.sh
-
-# sound
-bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-
 # specific window settings
 for_window [title="VLC media player"] floating enable
 for_window [title="Spotify - Linux Preview"] move window to workspace 4
