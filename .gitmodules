@@ -18,7 +18,7 @@
 	url = git://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
+	url = git@github.com:ervandew/supertab.git
 [submodule "vim/bundle/statline"]
 	path = vim/bundle/statline
 	url = git://github.com/millermedeiros/vim-statline.git
@@ -46,15 +46,18 @@
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
-[submodule "vim/bundle/ctrl.vim"]
-	path = vim/bundle/ctrl.vim
-	url = git://github.com/kien/ctrlp.vim.git
 [submodule "shell/prezto"]
 	path = shell/prezto
 	url = git://github.com/sorin-ionescu/prezto
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
 	url = git://github.com/fatih/molokai
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = git://github.com/Valloric/YouCompleteMe
+[submodule "vim/bundle/neocomplete"]
+	path = vim/bundle/neocomplete
+	url = git://github.com/Shougo/neocomplete.vim
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = git@github.com:tpope/vim-surround.git

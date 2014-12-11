@@ -6,7 +6,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 " -----------------------------------------------------------------
-" Generic Settings
+" Settings
 " -----------------------------------------------------------------
 
 " perform syntax highlighting from start
@@ -18,7 +18,7 @@ imap <C-?> <C-h>
 set viminfo='50,\"1000,:100,n~/.viminfo   " store my editing info
 set history=1000
 set backup
-set writebackup                                                                                                                                                                                                                            
+set writebackup 
 set swapfile
 set undofile
 set undolevels=1000
@@ -31,6 +31,13 @@ if has('title')
   set title
   set titlestring=%t%(\ [%R%M]%)
 endif
+
+set complete=.,w,b,u,t
+set completeopt=longest,menuone
+set completeopt -=preview
+
+let mapleader=","
+let maplocalleader=",,"
 
 " -----------------------------------------------------------------
 " Eveything to do with Visual (presentation, status, color ...)
@@ -55,23 +62,27 @@ set mat=5
 set ch=2
 set showcmd
 set showmode
-set cursorline
+set nocursorline
+set nocursorcolumn
 set laststatus=2
-"set statusline=[%{BufferCount()}\:%n]\ %<[L%l/%L:C%c\ %P]%2*%h%w%m%r%*[%{Pwd()}/%f]\ %y\ %{fugitive#statusline()}\ %4*%#warningmsg#%{SyntasticStatuslineFlag()}%*
-"set mouse=a
+set background=dark
+syntax sync minlines=256
+set synmaxcol=128
+set re=1
+au VimResized * :wincmd =
+
+let b:undo_indent = "setl sw< ts< sts< et< tw< wrap< cin< cino< inde<"
 
 filetype plugin indent on
 filetype plugin on
 syntax enable
 set t_Co=256                              " use 256 inside gnome terminal with CSApprox plugin
-set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 let g:rehash256 = 1
-"colorscheme molokai
 
 " -----------------------------------------------------------------
 " Format
@@ -87,12 +98,11 @@ set smarttab
 set autoindent
 set copyindent
 set smartindent
-"set cindent                             " I like C indents
+"set cindent
 "set cinkeys=!^                          " do it only when requested
 "set cinoptions=h1,l1,g1,t0,i4,+4,(0,w1,W4
 
 setlocal indentexpr=GoogleCppIndent()
-set omnifunc=syntaxcomplete#Complete
 
 autocmd BufReadCmd //depot/* exe "0r !p4 print -q <afile>"
 autocmd BufReadCmd //depot/* 1
@@ -104,37 +114,20 @@ autocmd BufReadCmd //depot/* set readonly
 
 set pastetoggle=<F2>
 
-let mapleader=","
-let maplocalleader="\\"
-let g:tagbar_usearrows = 1
-
-let b:undo_indent = "setl sw< ts< sts< et< tw< wrap< cin< cino< inde<"
-
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
 
 noremap <leader>l :TagbarToggle<CR>
 noremap <leader>r :!ruby %<cr>
 
-nnoremap <leader>y :YcmForceCompileAndDiagnostics<cr>
-nnoremap <leader>pg :YcmCompleter GoTo<CR>
-nnoremap <leader>pd :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
-
-
 nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
 nnoremap <silent> ,<C-s> :call RelatedSpecOpen()<CR>
 
 " -----------------------------------------------------------------
-" YouCompleteMe
+" Neocomplete
 " -----------------------------------------------------------------
 
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_min_num_identifier_candidate_chars = 4
-let g:ycm_extra_conf_globlist = ['~/code/*']
-let g:ycm_filetype_specific_completion_to_disable = {'javascript': 1}
-
-set omnifunc=syntaxcomplete#Complete
+let g:neocomplete#enable_at_startup = 1
 
 " -----------------------------------------------------------------
 " Syntastic
@@ -157,15 +150,63 @@ let g:airline#extensions#tabline#enabled = 1
 " -----------------------------------------------------------------
 
 let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
 
-au BufRead,BufNewFile *.go set filetype=go
-au BufWritePost *.go silent! !ctags -R &
-"au FileType go autocmd BufWritePre <buffer> Fmt
-"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>s <Plug>(go-def-split)
+au FileType go nmap <Leader>v <Plug>(go-def-vertical)
+au FileType go nmap <Leader>t <Plug>(go-def-tab)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <Leader>d <Plug>(go-doc)
+
+" -----------------------------------------------------------------
+" Ctrlp
+" -----------------------------------------------------------------
+
+let g:ctrlp_cmd = 'CtrlPMRU'  
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_max_height = 10 " maxiumum height of match window
+let g:ctrlp_switch_buffer = 'et' " jump to a file if it's open already
+let g:ctrlp_mruf_max=450 " number of recently opened files
+let g:ctrlp_max_files=0 " do not limit the number of searchable files
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+
+func! MyPrtMappings()
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+endfunc
+
+func! MyCtrlPTag()
+  let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
+  \ 'AcceptSelection("t")': ['<c-t>'],
+  \ }
+  CtrlPBufTag
+endfunc
+
+let g:ctrlp_buffer_func = { 'exit': 'MyPrtMappings' }
+com! MyCtrlPTag call MyCtrlPTag()
+
+let g:ctrlp_buftag_types = {
+  \ 'go' : '--language-force=go --golang-types=ftv',
+  \ 'markdown' : '--language-force=markdown --markdown-types=hik',
+  \ }
 
 " -----------------------------------------------------------------
 " Functions (used across the configuration)
 " -----------------------------------------------------------------
+
+let g:tagbar_usearrows = 1
 
 if exists("b:did_indent")
     finish
@@ -212,16 +253,6 @@ function! GoogleCppIndent()
     let l:pline = getline(l:pline_num)
     if l:pline =~# '^\s*template' | return l:pline_indent | endif
 
-    " TODO: I don't know to correct it:
-    " namespace test {
-    " void
-    " ....<-- invalid cindent pos
-    "
-    " void test() {
-    " }
-    "
-    " void
-    " <-- cindent pos
     if l:orig_indent != &shiftwidth | return l:orig_indent | endif
 
     let l:in_comment = 0
@@ -259,9 +290,4 @@ endfunction
 function! BufferCount()
   let s:buffer_count = len(filter(range(1,bufnr('$')), 'buflisted(v:val)'))
   return s:buffer_count
-endfunction
-
-function! Pwd()
-  let s:curdir = substitute(getcwd(), '/home/aabbas', "~", "g")
-  return s:curdir
 endfunction
