@@ -1,6 +1,6 @@
 set $mod Mod4
 
-exec xterm
+exec st
 
 new_window none
 new_float none
