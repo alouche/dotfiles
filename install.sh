@@ -21,3 +21,6 @@ for file in *; do
 done
 
 ln -sfv "$PWD/shell/prezto" "$HOME/.zprezto"
+
+# TODO check why this is necessaryr in order to foce submodule of submodule toproperly sync
+git submodule update --recursive
