@@ -7,7 +7,7 @@ new_float none
 
 hide_edge_borders both
 
-font -*-clean-medium-r-*--12-*-*-*-*-*-*-*
+#font -*-clean-medium-r-*--12-*-*-*-*-*-*-*
 
 floating_modifier $mod
 
