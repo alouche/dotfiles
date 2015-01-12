@@ -4,5 +4,4 @@ export DOTPATH
 export ZSH=$DOTPATH/shell/prezto
 
 source $ZSH/init.zsh
-source $DOTPATH/shell/aliases
-source $DOTPATH/shell/custom
+source $DOTPATH/shell/profile
