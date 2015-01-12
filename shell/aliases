@@ -15,6 +15,7 @@ alias netapps="lsof -P -i -n | cut -f 1 -d ' '| uniq | tail -n +2"
 
 alias g="git clone"
 alias u="sudo sh -c 'pacman -Syu'"
+alias backup="rsync -avxP --delete $HOME /mnt/backup/"
 
 # fun stuff
 alias freechess='telnet fics.freechess.org 5000'
