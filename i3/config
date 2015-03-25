@@ -94,8 +94,6 @@ bindsym Control+Mod1+Delete exec i3lock
 
 # specific window settings
 for_window [title="VLC media player"] floating enable
-for_window [title="Spotify - Linux Preview"] move window to workspace 4
-for_window [title="Firefox"] move window to workspace 2
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
