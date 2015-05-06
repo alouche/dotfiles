@@ -5,7 +5,6 @@ local_path="`( cd \"$local_path\" && pwd )`"
 
 git pull origin master
 git submodule sync
-git submodule foreach git pull origin master
 git submodule update --init --recursive
 
 exclude=(install.sh README.mkd shell)
@@ -19,6 +18,11 @@ for file in *; do
     fi
   fi
 done
+
+pushd . > /dev/null
+cd "$PWD/shell/prezto"
+git submodule update --init --recursive
+popd > /dev/null
 
 ln -sfv "$PWD/shell/prezto" "$HOME/.zprezto"
 
