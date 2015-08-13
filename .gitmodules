@@ -64,3 +64,6 @@
 [submodule "vim/bundle/rust"]
 	path = vim/bundle/rust
 	url = git://github.com/wting/rust.vim.git
+[submodule "vim/bundle/python-mode"]
+	path = vim/bundle/python-mode
+	url = git://github.com/klen/python-mode.git

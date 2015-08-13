@@ -5,6 +5,7 @@ local_path="`( cd \"$local_path\" && pwd )`"
 
 git pull
 git submodule update --init --recursive
+git submodule foreach git pull origin master
 
 exclude=(install.sh README.mkd shell)
 
