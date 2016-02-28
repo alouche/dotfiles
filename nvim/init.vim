@@ -41,9 +41,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--select=F,C9 --max-complexity=10'
 
-function! Completefunc(findstart, base)
-  return "\<c-x>\<c-p>"
-endfunction
+"function! Completefunc(findstart, base)
+"  return "\<c-x>\<c-p>"
+"endfunction
 
 set hidden
 set enc=utf-8
@@ -52,17 +52,22 @@ set laststatus=2
 set mouse-=a
 set updatetime=500
 set colorcolumn=80
-set completeopt=menuone,preview,noinsert
 set number showmatch
 set shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent smarttab
 set autoindent copyindent smartindent
 set noswapfile nobackup
 set nowb nowrap linebreak
 
+set complete=.,w,b,u,t
+set completeopt=longest,menuone
+set completeopt -=preview
+
 let mapleader=","
 let maplocalleader="\\"
 let g:python3_host_skip_check = 1
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#align_class = 1
+let g:deoplete#sources#go#package_dot = 1
 
 set pastetoggle=<F2>
 map <F3> :NERDTreeToggle
