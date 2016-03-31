@@ -130,6 +130,15 @@ bar {
   modifier Mod1
   workspace_buttons no
   strip_workspace_numbers yes
+  colors {
+    separator #dc322f
+    background #002b36
+    statusline #268bd2
+    focused_workspace #fdf6e3 #859900 #fdf6e3
+    active_workspace #fdf6e3 #6c71c4 #fdf6e3
+    inactive_workspace #586e75 #93a1a1 #002b36
+    urgent_workspace #d33682 #d33682 #fdf6e3
+  }
 }
 
 ipc-socket ~/.i3/ipc.sock
