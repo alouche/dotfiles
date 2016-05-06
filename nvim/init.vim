@@ -22,6 +22,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'klen/python-mode'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 autocmd BufEnter * :syntax sync fromstart
