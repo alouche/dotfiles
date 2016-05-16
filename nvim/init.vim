@@ -4,7 +4,7 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-pathogen'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
 Plug 'tomasr/molokai'
