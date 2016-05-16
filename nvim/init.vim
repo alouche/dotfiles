@@ -8,7 +8,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
 Plug 'tomasr/molokai'
-Plug 'Shougo/deoplete.nvim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'millermedeiros/vim-statline'
 Plug 'ervandew/supertab'
@@ -19,10 +18,12 @@ Plug 'vim-scripts/taglist.vim'
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'fatih/vim-go'
+Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'fatih/vim-go'
 Plug 'klen/python-mode'
 Plug 'rust-lang/rust.vim'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 autocmd BufEnter * :syntax sync fromstart
@@ -66,12 +67,19 @@ set completeopt -=preview
 let mapleader=","
 let maplocalleader="\\"
 let g:python3_host_skip_check = 1
+
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#align_class = 1
 let g:deoplete#sources#go#package_dot = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 set pastetoggle=<F2>
-map <F3> :NERDTreeToggle
+
+map <silent> <C-n> :NERDTreeToggle<cr>
+nnoremap <C-t> :call ToggleRelativeOn()<cr>
+" Close vim if only NERDTree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 map <F4> :TlistToggle
 noremap <leader>l :TagbarToggle
 
