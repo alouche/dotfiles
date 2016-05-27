@@ -1,4 +1,7 @@
 
+scriptencoding utf-8
+set encoding=utf-8
+
 set nocompatible
 filetype off
 
@@ -7,8 +10,6 @@ Plug 'tpope/vim-pathogen'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
-Plug 'tomasr/molokai'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'millermedeiros/vim-statline'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
@@ -59,6 +60,8 @@ set shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent smarttab
 set autoindent copyindent smartindent
 set noswapfile nobackup
 set nowb nowrap linebreak
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 set complete=.,w,b,u,t
 set completeopt=longest,menuone
@@ -75,11 +78,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 set pastetoggle=<F2>
 
-map <silent> <C-n> :NERDTreeToggle<cr>
 nnoremap <C-t> :call ToggleRelativeOn()<cr>
-" Close vim if only NERDTree is open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 map <F4> :TlistToggle
 noremap <leader>l :TagbarToggle
 
