@@ -7,7 +7,7 @@ local_path="`( cd \"$local_path\" && pwd )`"
 
 git pull
 
-exclude=(install.sh README.mkd shell nvim)
+exclude=(install.sh README.mkd shell termite)
 prezto="${ZDOTDIR:-$HOME}/.zprezto"
 
 if [ -d "$prezto" ]
@@ -32,3 +32,4 @@ for file in *; do
 done
 
 ln -sfnv "${PWD}/nvim" "${HOME}/.config/nvim"
+ln -sfnv "${PWD}/termite" "${HOME}/.config/termite"
