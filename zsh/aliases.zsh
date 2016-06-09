@@ -1,27 +1,4 @@
-typeset -gU PATH GOPATH
-
-export GOPATH=$HOME/.gopath
-export GEM_HOME=$HOME/.gems
-export GEM_PATH=$HOME/.gems
-export PATH=$HOME/.pbin:$HOME/.lbin:$HOME/.gems/bin:$GOPATH/bin:$PATH
-export EDITOR='nvim'
-export VISUAL='nvim'
-export PAGER='less'
-export ARCHFLAGS="-arch x86_64"
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib
-
-unset GREP_OPTIONS
-
-setopt extended_glob
-
-[[ -s "$HOME/.rodent/rodent" ]] && source "$HOME/.rodent/rodent"
-
-if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
-fi
-
-[[ -f "$HOME/.shell-custom" ]] && source "$HOME/.shell-custom"
-
+alias ls='ls --color=tty'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && cat && date'
 alias week='date +%V'
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -38,10 +15,12 @@ alias netapps="lsof -P -i -n | cut -f 1 -d ' '| uniq | tail -n +2"
 alias u="sudo sh -c 'pacman -Syu'"
 alias cu="sudo sh -c 'pacman -Rscn $(pacman -Qtdq) && pacman -Sc && pacman-optimize'"
 
-drm() { 
+drm() {
   docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
 }
 
-dri() { 
+dri() {
   docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
+
+[[ -f "$HOME/.shell-custom" ]] && source "$HOME/.shell-custom"

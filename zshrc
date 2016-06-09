@@ -1,7 +1,28 @@
-# the path to the dofiles is modified by the installer
-DOTPATH=
-export DOTPATH
-export ZSH="${ZDOTDIR:-$HOME}/.zprezto"
+setopt append_history
+setopt share_history
+setopt extended_history
+setopt histignorealldups
+setopt histignorespace
+setopt auto_cd
+setopt extended_glob
+setopt longlistjobs
+setopt notify
+setopt hash_list_all
+setopt completeinword
+setopt nohup
+setopt auto_pushd
+setopt nobeep
+setopt pushd_ignore_dups
+setopt noglobdots
+setopt noshwordsplit
+setopt unset
 
-source $ZSH/init.zsh
-source $DOTPATH/shell/profile
+for mod in parameter complist deltochar mathfunc stat zpty mapfile; do
+  zmodload -i zsh/${mod} 2>/dev/null || print "Warn: no ${mod} available"
+done && builtin unset -v mod
+
+for rc ($HOME/.zsh/*.zsh); do
+  source "$rc"
+done
+
+source "${ZDOTDIR:-${HOME}}/.zshrc.local"

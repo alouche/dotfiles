@@ -1,47 +1,47 @@
 set $mod Mod4
+set $alt Mod1
 
-exec st
+set $w1 1
+set $w2 2
+set $w3 3
+set $w4 4
 
-new_window none
-new_float none
+font pango:Hack 9
+
+new_window  none
+new_float   none
 
 hide_edge_borders both
-
-#font -*-clean-medium-r-*--12-*-*-*-*-*-*-*
-
 floating_modifier $mod
 
-bindsym $mod+Return exec i3-sensible-terminal
+force_display_urgency_hint 0 ms
+focus_on_window_activation urgent
 
-bindsym $mod+Shift+Q kill
-bindsym Mod1+F4 kill
+bindsym $alt+F4 kill
+bindsym $alt+Tab exec rofi -show window
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
-bindsym Mod1+Shift+D exec setxkbmap de
-bindsym Mod1+Shift+X exec setxkbmap 'de(dev)'
-bindsym Mod1+Shift+U exec setxkbmap us
-
-bindsym $mod+d exec dmenu_run
-
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+m focus right
+bindsym $mod+p focus parent
+bindsym $mod+c focus child
 
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+q focus parent
+bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+Return exec i3-sensible-terminal
 
-# focus the child container
-#bindcode $mod+d focus child
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-bindsym $mod+Shift+J move left
-bindsym $mod+Shift+K move down
-bindsym $mod+Shift+L move up
-bindsym $mod+Shift+M move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
-bindsym $mod+h split h
-bindsym $mod+v split v
+bindsym $mod+semicolon split h
+bindsym $mod+backslash split v
 
 bindsym $mod+f fullscreen
 
@@ -51,29 +51,20 @@ bindsym $mod+e layout default
 
 bindsym $mod+Shift+space floating toggle
 
+bindsym $mod+equal scratchpad show
 bindsym $mod+Shift+equal move scratchpad
 
-bindsym $mod+equal scratchpad show
-
 bindsym XF86Sleep exec i3lock -c 000000 | systemctl suspend
-
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+10 workspace 10
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
 
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -89,13 +80,11 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+C reload
 bindsym $mod+Shift+R restart
 bindsym $mod+Shift+E exit
-
 bindsym Control+Mod1+Delete exec i3lock
 
-# specific window settings
 for_window [title="VLC media player"] floating enable
 
-# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
   bindsym h resize shrink width 10 px or 10 ppt
   bindsym j resize grow height 10 px or 10 ppt
@@ -106,8 +95,7 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
+bindsym Mod1+m mode "move"
 mode "move" {
   bindsym k move up 20px
   bindsym h move left 20px
@@ -118,26 +106,36 @@ mode "move" {
   bindsym Escape mode "default"
 }
 
-bindsym Mod1+m mode "move"
-
+set $bg     #2f343f
+set $fg     #404552
+set $hi     #fce94f
+set $ac     #4084d6
+set $tx     #2d323d
+set $ia     #9e9e9e
+set $be     #8faf9f
+set $yw     #f8f893
+set $gn     #81c181
+set $rd     #bf9b76
+set $id     #f9f8ff
+set $ce     #ceecee
+set $sl     #7f7f7f
 
 bar {
   position top
-  tray_output primary
+  font pango:Hack 9
+  separator_symbol "⋆"
   status_command i3status
-  mode hide
-  hidden_state hide
-  modifier Mod1
-  workspace_buttons no
+  tray_output primary
+  tray_padding 0
   strip_workspace_numbers yes
   colors {
-    separator #dc322f
-    background #002b36
-    statusline #268bd2
-    focused_workspace #fdf6e3 #859900 #fdf6e3
-    active_workspace #fdf6e3 #6c71c4 #fdf6e3
-    inactive_workspace #586e75 #93a1a1 #002b36
-    urgent_workspace #d33682 #d33682 #fdf6e3
+    background          $bg
+    statusline          $sl
+    separator           $tx
+    focused_workspace   $ia        $ia        $tx
+    active_workspace    $gn        $ac        $tx
+    inactive_workspace  $bg        $fg        $ia
+    urgent_workspace    $ac        $bg        $ac
   }
 }
 

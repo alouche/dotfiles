@@ -7,19 +7,7 @@ local_path="`( cd \"$local_path\" && pwd )`"
 
 git pull
 
-exclude=(install.sh README.mkd shell termite)
-prezto="${ZDOTDIR:-$HOME}/.zprezto"
-
-if [ -d "$prezto" ]
-then
-  pushd . 2> /dev/null
-  cd "$prezsto"
-  git pull && git submodule update --init --recursive
-  popd 2> /dev/null
-else
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-fi
-
+exclude=(install.sh README.mkd shell config)
 
 sed -i "/^DOTPATH=/s,=.*,=${local_path}," "zshrc"
 
@@ -31,5 +19,6 @@ for file in *; do
   fi
 done
 
-ln -sfnv "${PWD}/nvim" "${HOME}/.config/nvim"
-ln -sfnv "${PWD}/termite" "${HOME}/.config/termite"
+ln -sfnv "${PWD}/config/nvim" "${HOME}/.config/nvim"
+ln -sfnv "${PWD}/config/termite" "${HOME}/.config/termite"
+ln -sfnv "${PWD}/config/htop" "${HOME}/.config/htop"
