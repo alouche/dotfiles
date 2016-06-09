@@ -7,16 +7,19 @@ Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/taglist.vim'
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go'
 Plug 'klen/python-mode'
 Plug 'rust-lang/rust.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'tomasr/molokai'
 call plug#end()
 
 syntax on
 filetype plugin indent on
+color molokai
 
 let mapleader=","
 let maplocalleader="\\"
@@ -39,7 +42,6 @@ set nowb nowrap linebreak
 set complete=.,w,b,u,t
 set completeopt=longest,menuone
 set completeopt -=preview
-set background=dark
 
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -53,33 +55,34 @@ nnoremap <leader>l :TagbarToggle
 " fix syntax highlighting
 autocmd BufEnter    * :syntax sync fromstart
 " clear whitespace
-autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
+autocmd BufWritePre * :%s/\s\+$//e
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
+"let g:airline_theme = 'wombat'
+let g:rehash256 = 1
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--select=F,C9 --max-complexity=10'
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 let g:python3_host_skip_check = 1
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#align_class = 1
 let g:deoplete#sources#go#package_dot = 1
-
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_max_height = 10
-let g:ctrlp_switch_buffer = 'et'
-let g:ctrlp_mruf_max=450
-let g:ctrlp_max_files=0
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 
 "function! Completefunc(findstart, base)
 "  return "\<c-x>\<c-p>"
