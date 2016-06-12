@@ -64,11 +64,10 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#wordcount#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#branch#displayed_head_limit = 10
-let g:airline_section_z = '𝕕 %2b 𝕙 0x%02B 𝕣%{v:register} %4l/%L %3v'
-" }
+"let g:airline#extensions#wordcount#enabled = 1
+"let g:airline#extensions#branch#enabled = 1
+"let g:airline#extensions#branch#displayed_head_limit = 10
+"let g:airline_section_z = '𝕕 %2b 𝕙 0x%02B 𝕣%{v:register} %4l/%L %3v'
 let g:rehash256 = 1
 
 let g:go_highlight_functions = 1
