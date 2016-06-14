@@ -127,6 +127,8 @@ bar {
   status_command i3status
   tray_output primary
   tray_padding 0
+  mode hide
+  modifier Mod4
   strip_workspace_numbers yes
   colors {
     background          $bg
