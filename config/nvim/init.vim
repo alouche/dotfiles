@@ -14,7 +14,7 @@ Plug 'fatih/vim-go'
 Plug 'klen/python-mode'
 Plug 'rust-lang/rust.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'morhetz/gruvbox'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 syntax on
