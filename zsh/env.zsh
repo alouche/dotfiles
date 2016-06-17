@@ -4,7 +4,9 @@ typeset -gU PATH GOPATH
 export GOPATH=$HOME/.gopath
 export GEM_HOME=$HOME/.gems
 export GEM_PATH=$HOME/.gems
-export PATH=$HOME/.pbin:$HOME/.lbin:$HOME/.gems/bin:$GOPATH/bin:$PATH
+export CONDA=$HOME/.miniconda3/bin
+export BIN=$HOME/.pbin:$HOME/.lbin:$HOME/.local/bin
+export PATH=$BIN:$GEM_HOME/bin:$GOPATH/bin:$CONDA:$PATH
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
@@ -19,9 +21,6 @@ grep_options+=( --color=auto )
 
 export EDITOR=${EDITOR:-nvim}
 export PAGER=${PAGER:-less}
-
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
 
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'

@@ -14,6 +14,9 @@ alias netscan='sudo iwlist wlan0 scan'
 alias netapps="lsof -P -i -n | cut -f 1 -d ' '| uniq | tail -n +2"
 alias u="sudo sh -c 'pacman -Syu'"
 alias cu="sudo sh -c 'pacman -Rscn $(pacman -Qtdq) && pacman -Sc && pacman-optimize'"
+alias src="cd $HOME/.gopath/src"
+alias srcl="src && cd local"
+alias mlenv="source activate machine-learning"
 
 drm() {
   docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null

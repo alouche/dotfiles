@@ -1,2 +1,3 @@
 .netrwhist
-nvim/.init.vim-rplugin~
+config/nvim/.init.vim-rplugin~
+zsh/cache

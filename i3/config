@@ -120,9 +120,31 @@ set $id     #f9f8ff
 set $ce     #ceecee
 set $sl     #7f7f7f
 
+set_from_resource $darkred     color1  #000000
+set_from_resource $red         color9  #000000
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $white       color15 #000000
+set $black       #282828
+set $darkblack   #1d2021
+set $transparent #00000000
+
+#                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
+client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
+client.urgent           $darkred    $darkred    $black      $darkred    $darkred
+client.background       $black
+
 bar {
   position top
-  font pango:Hack 9
   separator_symbol "⋆"
   status_command i3status
   tray_output primary
@@ -131,13 +153,13 @@ bar {
   modifier Mod4
   strip_workspace_numbers yes
   colors {
-    background          $bg
-    statusline          $sl
-    separator           $tx
-    focused_workspace   $ia        $ia        $tx
-    active_workspace    $gn        $ac        $tx
-    inactive_workspace  $bg        $fg        $ia
-    urgent_workspace    $ac        $bg        $ac
+    background         $transparent
+    separator          $transparent
+    focused_workspace  $transparent $transparent $darkwhite
+    inactive_workspace $transparent $transparent $white
+    active_workspace   $transparent $transparent $white
+    urgent_workspace   $darkred     $darkred     $transparent
+    binding_mode       $darkred     $darkred     $transparent
   }
 }
 
